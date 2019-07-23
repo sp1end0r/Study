@@ -10,3 +10,5 @@ Example using Python Flask + Mysql
 > Data base : Mysql 
 
 [+] This is example using flask and mysql
+
+[+] ref. Flask manual : https://flask.palletsprojects.com/en/1.0.x/
