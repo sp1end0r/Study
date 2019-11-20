@@ -1,13 +1,19 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
+# 최대값과 최소값을 찾는 함수
+import timeit
+import random
 
 def find_max(data):
     length = len(data)
     max_data = data[0]
     try : 
+        start = timeit.default_timer()
         for i in range (1, length):
             if data[i] > max_data:
                 max_data = data[i]
+        stop = timeit.default_timer()
+        print ("execute time : %f" %(stop - start))
         return max_data
 
     except UnboundLocalError:
@@ -59,25 +65,20 @@ def menu(data):
         return 
 
 if __name__ == "__main__":
-    
-    data = []
-    while True :
+    myList = []
 
-        index = menu(data)
-        if index == 0 :
-            print ("bye bye ~ ")
-            exit(0)
+    num = random.randrange(0, 1000)
 
-        elif index == 1 :
-            data = input_interface()
 
-        elif index == 2 :
-            max_data = find_max(data)
-            print ("Max data in List : %.2f" % max_data)
 
-        elif index == 3 :
-            min_data = find_min(data)
-            print ("Minimun data in List : %.2f" % min_data)
+    for i in range(800) :
 
-        else : 
-            print ("Error : invaild menu number ..")
+        while num in myList : # 중복될 경우
+
+            num = random.randrange(0, 1000) # 다시 난수 생성
+
+        myList.append(num) # 중복 되지 않은 경우만 추가
+
+    print(myList)
+    find_max(myList)
+

@@ -1,11 +1,17 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
+# 0부터 n까지의 합
+import timeit
 
 def sum(num): 
     res = 0
+    start = timeit.default_timer()
     for num in range (1,num+1):
         res = res+(num*num)
         print ("calulating %d times.." % num)
+    
+    stop = timeit.default_timer()
+    print ("execute time : %f" %(stop - start))
     return res
 
 
