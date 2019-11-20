@@ -1,32 +1,32 @@
 #/usr/local/bin/python3
 # -*- coding: utf-8 -*-
-def _quick_sort_sub(data, start, end, row):
+def _quick_sort_sub(data, start, end, column):
     res = data
     if end - start <= 0:
         return
-    pivot = res[end][row]   
+    pivot = res[end][column]   
     i = start
     for j in range(start, end):
-        if res[j][row] <= pivot:
+        if res[j][column] <= pivot:
 
             res[i], res[j] = res[j], res[i]
             i += 1
     res[i], res[end] = res[end], res[i]
-    _quick_sort_sub(res, start, i - 1, row) 
-    _quick_sort_sub(res, i + 1, end, row)  
+    _quick_sort_sub(res, start, i - 1, column) 
+    _quick_sort_sub(res, i + 1, end, column)  
 
-def rec_quick_sort(data, row):
-    _quick_sort_sub(data, 0, len(data) - 1, row)
+def rec_quick_sort(data, column):
+    _quick_sort_sub(data, 0, len(data) - 1, column)
 
-def _partition(res, start, end, row):
+def _partition(res, start, end, column):
     pivot = res[start][0]
     left = start + 1
     right = end
     done = False
     while not done:
-        while left <= right and res[left][row] <= pivot:
+        while left <= right and res[left][column] <= pivot:
             left += 1
-        while left <= right and res[right][row] > pivot:
+        while left <= right and res[right][column] > pivot:
             right -= 1
         if right < left:
             done = True
@@ -35,7 +35,7 @@ def _partition(res, start, end, row):
     res[start], res[right] = res[right], res[start]  
     return right
 
-def seq_quick_sort(data, row):
+def seq_quick_sort(data, column):
     res = data
     stack = []
     start = 0
@@ -46,7 +46,7 @@ def seq_quick_sort(data, row):
     while stack:
         end = stack.pop()
         start = stack.pop()
-        pivot = _partition(res, start, end, row)
+        pivot = _partition(res, start, end, column)
 
         if int(pivot - 1) > start:
             stack.append(start)

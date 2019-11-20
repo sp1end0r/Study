@@ -1,7 +1,7 @@
 #/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 
-def rec_merge_sort(data, row):
+def rec_merge_sort(data, column):
     length = len(data)
     if length<=1 :
             return
@@ -9,14 +9,14 @@ def rec_merge_sort(data, row):
     g1 = data[:mid]
     g2 = data[mid:]
 
-    rec_merge_sort(g1, row)
-    rec_merge_sort(g2, row)
+    rec_merge_sort(g1, column)
+    rec_merge_sort(g2, column)
 
     i1 = 0
     i2 = 0 
     ia = 0
     while i1 < len(g1) and i2 <len(g2):
-        if g1[i1][row] < g2[i2][row]:
+        if g1[i1, column] < g2[i2, column]:
             data[ia] = g1[i1]
             i1 += 1
             ia += 1
@@ -35,9 +35,9 @@ def rec_merge_sort(data, row):
         i2 += 1
         ia += 1
 
-def seq_merge_sort(data, row):
+def seq_merge_sort(data, column):
     res = data
-    right = 0; wid = 0; rend = 0; left = 0
+    right = 0; rend = 0; left = 0
     k = 1
 
     num = len(res)
@@ -53,7 +53,7 @@ def seq_merge_sort(data, row):
             m = left; i = left; j = right
 
             while(i < right and j < rend):
-                if res[i][row] <= res[j][row]:
+                if res[i, column] <= res[j, column]:
                     temp[m] = res[i]
                     i += 1
                 else:

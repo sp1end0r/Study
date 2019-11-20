@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-def out_data(path, attribute, res, field,file):
+def out_data(path, attribute, res, field, file):
     if attribute == 0 : 
         print ("Plz Sorting data before creating out put file... ")
         exit(0)

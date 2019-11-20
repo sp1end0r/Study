@@ -23,8 +23,8 @@ if __name__ =="__main__":
 
     try : 
         column = int(input("Input column in Data>> "))
-        if column > len(field) or column < 0 :
-            print ("Error : overflow column ")
+        if column > len(field) or column < 1 :
+            print ("Error : invaild column ")
             exit(0)
         
         column = column-1
