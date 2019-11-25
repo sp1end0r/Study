@@ -37,61 +37,95 @@ if __name__ =="__main__":
         idx = menu()
         if idx  == 1 :
             print ("Bubble Sorting ...")
+            start = timeit.default_timer()
             res = bubble_sort(data, column)
+            end = timeit.default_timer()
             attribute = 1
             print ("D0NE ~ !!")
+            print ("execute time : %f" %(end - start))
             out_data(path, attribute, res, field, file_name)
+            exit(0)
 
         elif idx == 2 :
             print ("Inserting Sorting ...")
+            start = timeit.default_timer()
             res = insert_sort(data, column)
+            end =  timeit.default_timer()
             attribute = 2
             print ("D0NE ~ !!")
+            print ("execute time : %f" %(end - start))
             out_data(path, attribute, res, field, file_name)
+            exit(0)
 
         elif idx == 3 : 
             print ("Selecting Sorting ...")
+            start = timeit.default_timer()
             res = select_sort(data, column)
+            end =  timeit.default_timer()
             attribute = 3
             print ("D0NE ~ !!")
+            print ("execute time : %f" %(end - start))
             out_data(path, attribute, res, field, file_name)
+            exit(0)
 
         elif idx == 4 :
             print ("Heap Sorting ...")
+            start =  timeit.default_timer()
             res = heap_sort(data, column)
+            end = timeit.default_timer()
             attribute = 4
             print ("D0NE ~ !!")
+            print ("execute time : %f" %(end - start))
             out_data(path, attribute, res, field, file_name)
+            exit(0)
 
         elif idx == 5 :
             print ("Recursive Merge Sorting ...")
+            data = orignal
+            start =  timeit.default_timer()
             rec_merge_sort(data, column)
+            end = timeit.default_timer()
             res= data
             attribute = 5
             print("D0NE ~ !!")
+            print ("execute time : %f" %(end - start))
             out_data(path, attribute, res, field, file_name)
+            exit(0)
 
         elif idx == 6 :
             print ("Iteractive Merge Sorting ...")
+            start = timeit.default_timer()
             res = seq_merge_sort(data, column)
+            end = timeit.default_timer()
             attribute = 6
             print("D0NE ~ !!")
+            print ("execute time : %f" %(end - start))
             out_data(path, attribute, res, field, file_name)
+            exit(0)
 
         elif idx == 7:
             print ("Recursive Quick Sorting ...")
+            data = orignal
+            start = timeit.default_timer()
             rec_quick_sort(data, column)
+            end = timeit.default_timer()
             res = data
             attribute = 7
             print("D0NE ~ !!")
+            print ("execute time : %f" %(end - start))
             out_data(path, attribute, res, field, file_name)
+            exit(0)
 
         elif idx == 8 :
             print ("Iteractive Quick Sorting ...")
+            start = timeit.default_timer()
             res = seq_quick_sort(data, column)
+            end = timeit.default_timer()
             attribute = 8
             print ("D0NE ~ !!")
+            print ("execute time : %f" %(end - start))
             out_data(path, attribute, res, field, file_name)
+            exit(0)
 
         elif idx == 0 :
             print ("bye bye ~ ")
