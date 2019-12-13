@@ -16,7 +16,7 @@ def rec_merge_sort(data, column):
     i2 = 0 
     ia = 0
     while i1 < len(g1) and i2 <len(g2):
-        if g1[i1, column] < g2[i2, column]:
+        if g1[i1][column] < g2[i2][column]:
             data[ia] = g1[i1]
             i1 += 1
             ia += 1

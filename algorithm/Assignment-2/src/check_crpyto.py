@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 
-def check_list(list):
+def check_list(list): ## 파일에서 입력받은 내용을 암호화할 문자열과 복호화할 문자열이 담긴 리스
     encrpyt_list = []
     decrpyt_list = []
     enc_flag = False

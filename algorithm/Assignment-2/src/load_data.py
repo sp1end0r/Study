@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 import os
 
-def load_data(path):
-    file_name = path+"/input/report_input_usr-dict-words.en-src.txt"
+def load_data(path, name):
+    file_name = path+"/input/"+name
     with open(file_name, "r") as fp :
         temp = fp.readlines()
     
